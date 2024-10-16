@@ -1,38 +1,25 @@
+function rockPaperScissors(player1, player2) { 
 
-function rockPaperScissors(player1, player2) { //Function to run the rock, paper, scissors game
+  //Creates a dictionary of arrays for which moves can win
+  const winningChoices = {
+    rock: ["scissors", "lizard"],
+    paper: ["rock", "spock"],
+    scissors: ["paper", "lizard"],
+    lizard: ["spock", "paper"],
+    spock: ["rock", "scissors"]
+  };
 
-  return (player1 === player2) ? "draw" //Returns draw if the two variables passed are the same
+  //Returns "both" if the variables passed to the function are the same
+  if (player1 === player2) {
+    return "draw"
+  };
 
-   : (player1 === "rock" && player2 === "scissors") ? "player1"   //Returns player1's wins for the basic game
-   : (player1 === "scissors" && player2 === "paper") ? "player1"  //Returns player1's wins for the basic game
-   : (player2 === "rock" && player1 === "paper") ? "player1"      //Returns player1's wins for the basic game
-
-   : (player2 === "rock" && player1 === "scissors") ? "player2"   //Returns player2's wins for the basic game
-   : (player2 === "scissors" && player1 === "paper") ? "player2"  //Returns player2's wins for the basic game
-   : (player1 === "rock" && player2 === "paper") ? "player2"      //Returns player2's wins for the basic game
-
-   : (player1 === "lizard" && player2 === "spock") ? "player1"    //Returns player1's wins for the advanced game
-   : (player1 === "spock" && player2 === "scissors") ? "player1"  //Returns player1's wins for the advanced game
-   : (player1 === "rock" && player2 === "lizard") ? "player1"     //Returns player1's wins for the advanced game
-   : (player1 === "paper" && player2 === "spock") ? "player1"     //Returns player1's wins for the advanced game
-   : (player1 === "scissors" && player2 === "lizard") ? "player1" //Returns player1's wins for the advanced game
-   : (player1 === "lizard" && player2 === "paper") ? "player1"    //Returns player1's wins for the advanced game
-   : (player1 === "spock" && player2 === "rock") ? "player1"      //Returns player1's wins for the advanced game
-
-   : (player2 === "lizard" && player1 === "spock") ? "player2"    //Returns player2's wins for the advanced game
-   : (player2 === "spock" && player1 === "scissors") ? "player2"  //Returns player2's wins for the advanced game   
-   : (player2 === "rock" && player1 === "lizard") ? "player2"     //Returns player2's wins for the advanced game
-   : (player2 === "paper" && player1 === "spock") ? "player2"     //Returns player2's wins for the advanced game
-   : (player2 === "scissors" && player1 === "lizard") ? "player2" //Returns player2's wins for the advanced game
-   : (player2 === "lizard" && player1 === "paper") ? "player2"    //Returns player2's wins for the advanced game
-   : (player2 === "spock" && player1 === "rock") ? "player2"      //Returns player2's wins for the advanced game
-
-   : "Please each choose rock, paper, scissors, lizard, or spock"; //Returns that incorrect variables have been passed
+  //Returns "player1" if player2's move is inlcuded in the corresponding array, otherwise returns "player2"
+  return (winningChoices[player1].includes(player2)) ? "player1" : "player2";
 
 }
 
-console.log(rockPaperScissors("test","test"))
-
+console.log(rockPaperScissors("", ""));
 
 
 
