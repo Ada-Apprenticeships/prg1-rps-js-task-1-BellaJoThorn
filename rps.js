@@ -11,7 +11,7 @@ function rockPaperScissors(player1, player2) {
 
   //Returns "both" if the variables passed to the function are the same
   if (player1 === player2) {
-    return "draw"
+    return "draw";
   };
 
   //Returns "player1" if player2's move is inlcuded in the corresponding array, otherwise returns "player2"
